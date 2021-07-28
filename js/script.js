@@ -1,8 +1,9 @@
 "use strict";
 
+import menu from './modules/menu';
+import form from './modules/form';
+
 window.addEventListener('DOMContentLoaded', () => {
-	const menu = require('./modules/menu'),
-		  form = require('./modules/form');
 
 	menu();
 	form();

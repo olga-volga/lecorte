@@ -17,4 +17,4 @@ function menu() {
 	});
 }
 
-module.exports = menu;
+export default menu;
