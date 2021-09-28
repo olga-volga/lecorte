@@ -1,0 +1,155 @@
+/*===DEGUSTATION SECTION===*/
+.degustation {
+	overflow: hidden;
+	background-color: $main;
+	padding: 100px 0;
+
+	&-body {
+		position: relative;
+		border: 3px solid $frame;
+		padding: 0 30px 70px;
+
+		&-decoration {
+			width: 100%;
+			position: absolute;
+		    top: -65px;
+		    left: -30px;
+		}
+	}
+	.body-decoration-inner {
+		display: flex;
+		justify-content: space-between;
+	}
+	.decoration__right {
+		display: flex;
+		justify-content: flex-end;
+		position: absolute;
+	    right: -83px;
+		img {}
+	}
+	&__title {
+		max-width: 470px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		background-color: $main;
+		margin-top: -33px;
+	}
+	&__text {
+		max-width: 540px;
+		margin: 0 auto;
+		text-align: center;
+		margin-bottom: 81px;
+	}
+	&-form {
+		max-width: 540px;
+		margin: 0 auto;
+	}
+	.form-row {
+		display: flex;
+		margin-bottom: 40px;
+	}
+	.form-line {
+		flex: 0 1 50%;
+		&:first-child {
+			margin-right: 30px;
+		}
+	}
+	.input {
+		width: 100%;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 19px;
+		color: $light;
+		background-color: transparent;
+		border: 0;
+		border-bottom: 1px solid $light;
+		padding-bottom: 10px;
+	}
+	::-webkit-input-placeholder {
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 19px;
+		color: $light;
+	}
+	::-moz-placeholder {
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 19px;
+		color: $light;
+	}
+	:-moz-placeholder {
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 19px;
+		color: $light;
+	}
+	:-ms-input-placeholder {
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 19px;
+		color: $light;
+	}
+	.form-address {
+		margin-bottom: 50px;
+	}
+	.adress {
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 19px;
+		border-bottom: 1px solid $light;
+		padding-bottom: 10px;
+	}
+	@media (max-width: 1200px) {
+		&-body-decoration {
+			display: none;
+		}
+	}
+	@media (max-width: $md3+px) {
+		padding: 80px 0 70px;
+
+		&__title {
+			max-width: 360px;
+			margin-top: -24px;
+			padding: 0 10px;
+		}
+		&__text {
+			font-size: 14px;
+			margin-bottom: 40px;
+		}
+	}
+	@media (max-width: $md4+px) {
+		&-body {
+			padding: 0 30px 50px;
+		}
+		.form-row {
+			flex-wrap: wrap;
+			margin-bottom: 30px;
+		}
+		.form-line {
+			flex: 1 1 100%;
+			&:first-child {
+				margin-right: 0;
+				margin-bottom: 30px;
+			}
+		}
+	}
+	@media (max-width: $md5+px) {
+		&__title {
+			max-width: 310px;
+			margin-top: -22px;
+		}
+	}
+	@media (max-width: $md6+px) {
+		padding: 60px 0 50px;
+
+		&-body {
+			padding: 0 20px 30px;
+		}
+	}
+	@media (max-width: $md7+px) {
+		&__title {
+			max-width: 200px;
+		}
+	}
+}

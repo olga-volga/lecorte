@@ -1,0 +1,44 @@
+/*===MAIN SECTION===*/
+.main {
+	//height: 900px;
+	background-image: url('../img/main/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 0%;
+	padding-bottom: 150px;
+
+	&-body {
+		display: flex;
+		justify-content: center;
+		padding-top: 700px;
+
+		&__column {
+			margin-right: 30px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	&-button {
+		display: flex;
+	}
+	@media (max-width: $md1+px) {
+		height: 700px;
+		&-body {
+			padding-top: 550px;
+		}
+	}
+	@media (max-width: $md5+px) {
+		height: 600px;
+		&-body {
+			flex-direction: column;
+			align-items: center;
+			padding-top: 420px;
+
+			&__column {
+				margin-right: 0;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

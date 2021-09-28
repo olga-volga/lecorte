@@ -1,0 +1,141 @@
+/*===FOOTER===*/
+.footer {
+	background-color: $accent;
+	padding: 50px 0;
+
+	&-top {
+		border-top: 1px solid $light;
+		padding: 18px 0;
+	}
+	&__menu {
+		max-width: 920px;
+		margin: 0 auto;
+	}
+	&-menu-list {
+		display: flex;
+		li {
+			margin-right: 60px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	&-menu__link {
+		font-size: 14px;
+		line-height: 21px;
+		color: $light;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&-bottom {
+		border-top: 1px solid $light;
+		border-bottom: 1px solid $light;
+
+		&-list {
+			max-width: 920px;
+			margin: 0 auto;
+			display: flex;
+			li {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 58px;
+				border-right: 1px solid $light;
+				&:first-child {
+					flex: 0 1 255px;
+					justify-content: flex-start;
+				}
+				&:nth-child(2) {
+					flex: 0 1 235px;
+				}
+				&:nth-child(3) {
+					flex: 0 1 260px;
+				}
+				&:last-child {
+					flex: 1;
+					justify-content: flex-end;
+					border-right: 0;
+				}
+			}
+		}
+		&__text,
+		&__link {
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 21px;
+			text-transform: uppercase;
+			color: $light;
+		}
+		&__link {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	&-social__link {
+		display: block;
+		margin-right: 30px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	@media (max-width: $md1+px) {
+		&-menu-list {
+			flex-wrap: wrap;
+			li {
+				flex: 0 1 33.333%;
+				margin-right: 0;
+				margin-bottom: 10px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		&-bottom {
+			padding: 18px 0;
+
+			&-list {
+				flex-direction: column;
+				li {
+					height: auto;
+					justify-content: flex-start;
+					border-right: 0;
+					margin-bottom: 10px;
+					&:first-child {
+						flex: 0 1 auto;
+						justify-content: flex-start;
+					}
+					&:nth-child(2) {
+						flex: 0 1 auto;
+					}
+					&:nth-child(3) {
+						flex: 0 1 auto;
+					}
+					&:last-child {
+						flex: 0 1 auto;
+						justify-content: flex-start;
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: $md3+px) {
+		&-menu-list {
+			li {
+				margin-right: 60px;
+			}
+		}
+	}
+	@media (max-width: $md6+px) {
+		padding: 40px 0;
+
+		&-menu-list {
+			li {
+				flex: 1 1 100%;
+				margin-right: 0;
+			}
+		}
+	}
+}
