@@ -42,7 +42,6 @@ function form() {
     success: 'Благодарим вас за интерес к бутику LE CORTE! Мы свяжемся с Вами совсем скоро, чтобы уточнить детали.',
     fail: 'Что-то пошло не так...'
   };
-  bindPostData(form);
 
   var postData = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url, data) {
@@ -84,18 +83,29 @@ function form() {
   function bindPostData(form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var statusMessage = document.createElement('div');
+      statusMessage.classList.add('status');
+      statusMessage.style.cssText = 'display:none;text-align:center;color:#998431;padding-top:30px;';
+      form.append(statusMessage);
       var formData = new FormData(form);
       var json = JSON.stringify(Object.fromEntries(formData.entries()));
       postData('http://localhost:3000/requests', json).then(function (data) {
         console.log(data);
-        alert(message.success);
+        statusMessage.textContent = message.success;
+        statusMessage.style.display = 'block';
       }).catch(function () {
-        alert(message.fail);
+        statusMessage.textContent = message.fail;
+        statusMessage.style.display = 'block';
       }).finally(function () {
-        form.reset();
+        setTimeout(function () {
+          form.reset();
+          statusMessage.remove();
+        }, 4000);
       });
     });
   }
+
+  bindPostData(form);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (form);

@@ -7,8 +7,6 @@ function form() {
 		fail: 'Что-то пошло не так...'
 	};
 
-	bindPostData(form);
-
 	const postData = async (url, data) => {
       const res = await fetch(url, {
         method: 'POST',
@@ -24,6 +22,11 @@ function form() {
 		form.addEventListener('submit', (e) => {
 			e.preventDefault();
 
+			let statusMessage = document.createElement('div');
+			statusMessage.classList.add('status');
+			statusMessage.style.cssText = 'display:none;text-align:center;color:#998431;padding-top:30px;';
+			form.append(statusMessage);
+
 			const formData = new FormData(form);
 
 			const json = JSON.stringify(Object.fromEntries(formData.entries()));
@@ -31,16 +34,23 @@ function form() {
 			postData('http://localhost:3000/requests', json)
 			.then(data => {
 	          console.log(data);
-	          alert(message.success);
+	          statusMessage.textContent = message.success;
+	          statusMessage.style.display = 'block';
 	        })
 	        .catch(() => {
-	          alert(message.fail);
+	          statusMessage.textContent = message.fail;
+	          statusMessage.style.display = 'block';
 	        })
 	        .finally(() => {
-	          form.reset();
-	        })
+	          setTimeout(() => {
+	          	form.reset();
+	            statusMessage.remove();
+	          }, 4000);
+	        });
 		});
 	}
+
+	bindPostData(form);
 }
 
 export default form;
