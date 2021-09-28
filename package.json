@@ -23,10 +23,13 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "dom-node-polyfills": "^1.0.0",
     "es6-promise": "^4.2.8",
     "es7-object-polyfill": "^1.0.1",
     "fetch-ie8": "^1.5.0",
     "fetch-polyfill": "^0.8.2",
-    "node-fetch": "^3.0.0"
+    "formdata-polyfill": "^4.0.8",
+    "node-fetch": "^3.0.0",
+    "whatwg-fetch": "^3.6.2"
   }
 }

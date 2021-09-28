@@ -1,6 +1,8 @@
 function form() {
 	// Form
-	const form = document.querySelector('form');
+	const form = document.querySelector('form'),
+		  nameInput = document.querySelector('input[name="name"]'),
+		  phoneInput = document.querySelector('input[name="phone"]');
 
 	const message = {
 		success: 'Благодарим вас за интерес к бутику LE CORTE! Мы свяжемся с Вами совсем скоро, чтобы уточнить детали.',
@@ -16,6 +18,18 @@ function form() {
         }
       });
       return await res.json();
+    };
+
+    const checkNameInput = (name) => {
+    	name.addEventListener('input', () => {
+    		name.value = name.value.replace(/\d/gi, '');
+    	});
+    };
+
+    const checkPhoneInput = (phone) => {
+    	phone.addEventListener('input', () => {
+    		phone.value = phone.value.replace(/\D/gi, '');
+    	});
     };
 
 	function bindPostData(form) {
@@ -50,6 +64,8 @@ function form() {
 		});
 	}
 
+	checkNameInput(nameInput);
+	checkPhoneInput(phoneInput);
 	bindPostData(form);
 }
 
