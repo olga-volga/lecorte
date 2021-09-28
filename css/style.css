@@ -260,11 +260,11 @@ a:hover {
 
 /*===MAIN SECTION===*/
 .main {
-  height: 900px;
   background-image: url("../img/main/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 0%; }
+  background-position: 50% 0%;
+  padding-bottom: 150px; }
 
 .main-body {
   display: -webkit-box;

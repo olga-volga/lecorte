@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "browserslist": [
-    "> 1%"
+    "> 0.5%"
   ],
   "devDependencies": {
     "@babel/cli": "^7.14.8",
@@ -24,6 +24,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "es6-promise": "^4.2.8",
-    "fetch-polyfill": "^0.8.2"
+    "es7-object-polyfill": "^1.0.1",
+    "fetch-ie8": "^1.5.0",
+    "fetch-polyfill": "^0.8.2",
+    "node-fetch": "^3.0.0"
   }
 }
